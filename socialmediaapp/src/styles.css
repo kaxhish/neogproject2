@@ -1,0 +1,239 @@
+body{
+    margin: 0px;
+    padding: 0px; 
+    font-family: 'Ubuntu', sans-serif;
+  
+}
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+  
+}
+/* Light Theme */
+.fullPage-explore {
+    background-color: #fff7f7;
+    color: #000000;
+  }
+  
+  /* Dark Theme */
+  .fullPage-explore.dark {
+    background-color: #331414;
+    color: #ffffff;
+  }
+  
+/*App.js ,, grid-section*/
+.fullpage{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+   
+}
+.firstSection-fullPage{
+    background-color: rgba(193, 46, 46, 0.715);
+}
+.secondSection-fullPage{
+  
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+}
+/*upperbar.js*/
+.upperbar{
+    width: 100vw;
+    height: 3.5pc;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+.upperbar div{
+    margin-top: 6px;
+    margin-inline: 25px;
+}
+.upperbar-hashIcon{
+    font-size: 24px;
+    color: rgba(120, 27, 196, 0.788);
+    font-weight: bolder;
+}
+.upperbar-hashIcon span{
+    margin: 10px;
+}
+/*NavBar.js*/
+.navbar{
+    height: 100vh;
+    width: 15pc;  
+    margin-top: 40px;
+ text-decoration: none;
+}
+.navbar span{
+  
+    margin-inline-end: 20px;
+     font-size: 30px;
+ }
+.navbar div{
+    font-size: 20px;
+    margin-bottom: 35px;
+    margin-left: 30px;
+}
+
+/*Suggestion page*/
+.fullPage-suggestion{
+    height: 100vh;
+}
+.suggestions{
+    display: flex;
+    margin-block: 3pc;
+}
+.suggestions div{
+    margin-left: 10px;
+}
+.userInfo div{
+margin-bottom: 5px;
+font-weight: bold;
+}
+.userFL{
+    text-transform: capitalize;
+    font-size: 18px;
+}
+.fullPage-suggestion h1{
+    margin-block: 3pc;
+}
+.fullPage-suggestion img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+.fullPage-suggestion button{
+    width: 7pc;
+    height: 2pc;
+    background-color:  rgba(193, 46, 46, 0.715);
+    border-style: none;
+    border-radius: 13px;
+    color: white;
+    font-weight: bold;
+}
+
+.exploreUsers{
+    display: flex;
+    flex-direction: column;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 2pc;
+}
+.fl-usernameGrid{
+    display: flex;
+}
+.fl-usernameGrid div{
+    margin-left: 10px;
+}
+.fl-usernameGrid img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+.optionsSocial{
+    display: flex;
+   
+    padding: 10px;
+}
+.optionsSocial span{
+    margin-inline: 20px;
+  
+}
+.optionsSocial div{
+    margin: 20px;
+    margin-inline: 15px;
+ font-size: 20px;
+}
+.exploreFL{
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.exploreContent{
+    margin-top: 15px;
+}
+.redH{
+    color: red;
+}
+.loginPage{
+    display: flex;
+    flex-direction: column;
+    width: 20pc;
+    height: 25pc;
+   
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10pc;
+    border-radius: 15px;
+    border: none;
+background-color: white;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+.hash-log{
+    color: rgb(86, 86, 187);
+    font-weight: bold;
+    font-size: 20px;
+}
+.desp-log{
+    font-size: 17px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.loginPage h2{
+    color: rgb(228, 158, 158);
+}
+.loginPage input{
+    padding: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.loginPage button{
+    padding: 7px;
+    margin-block: 10px;
+    background-color: rgb(78, 78, 121);
+    color: white;
+    font-weight: bold;
+}
+.signpage{
+    display: flex;
+    flex-direction: column;
+    width: 20pc;
+    height: 25pc;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10pc;
+    border-radius: 15px;
+    border: none;
+background-color: white;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.signpage h2{
+    color: rgb(228, 158, 158);
+    font-weight: bolder;
+}
+.sign-form{
+    display: flex;
+    flex-direction: column;
+}
+.sign-form input{
+    padding: 7px;
+    margin-block: 10px;
+    width: 15pc;
+    font-weight: bolder;
+}
+.sign-form button{
+    padding: 7px;
+    margin-block: 10px;
+    background-color: rgb(78, 78, 121);
+    color: white;
+    font-weight: bold;
+}
