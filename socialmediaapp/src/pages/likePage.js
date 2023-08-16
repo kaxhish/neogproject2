@@ -3,23 +3,23 @@ import React from "react"
 import { context } from "../contexts/contexts"
 import "../styles.css"
 import { AiOutlineHeart } from "react-icons/ai";
-import {BsBookmark} from "react-icons/bs"
-import {BsFillBookmarkFill} from "react-icons/bs"
+import {AiFillHeart} from "react-icons/ai"
+import { BiCommentDetail } from "react-icons/bi";
+import { LiaBookmarkSolid } from "react-icons/lia";
 import { AiOutlineShareAlt } from "react-icons/ai";
-import 'react-toastify/dist/ReactToastify.css'; // Import the CSS file
-import { ToastContainer } from 'react-toastify';
 
-export default function BookmarksPage(){
-let {isBKPosts,handleRemoveBK}=useContext(context)
+export default function LikePage(){
+const { isLikedPosts, handleAddLinkes,handleRemoveLikedpost } = useContext(context);
+
+
 
     return(
 <div>
- {isBKPosts.length === 0 ? (
-        <div className="noPostsHeading" style={{color:"blue"}}>No Bookmarks added</div>
-      ) : (
-isBKPosts.map((postC) => {
-          let { id, imgSrc, firstName, lastName, username, content,  likes } = postC;
-          let isBKlist=true
+{isLikedPosts.length === 0 ? (
+        <div className="noPostsHeading" style={{color:"blue"}}>No Liked Posts added</div>
+      ) : (isLikedPosts.map((postC) => {
+          let { id, imgSrc, firstName, lastName, username, content, comments, likes } = postC;
+          let isLikelist=true
           return (
             <div key={id} className="exploreUsers">
              
@@ -37,30 +37,28 @@ isBKPosts.map((postC) => {
 
               <div className="optionsSocial">
                 <div>
-                  <AiOutlineHeart />
-                  <span>{likes.likeCount}</span>
-                </div>
-              
-                <div>
-                {isBKlist ? (
-                <BsFillBookmarkFill
-                  onClick={() => handleRemoveBK(postC)}
+                {isLikelist ? (
+                <AiFillHeart
+                  onClick={() => handleRemoveLikedpost(postC)}
                   style={{ color: "red", fontWeight: "bold", fontSize: "22px" }}
                 />
               ) : (
-                <BsBookmark
+                <AiOutlineHeart
                   style={{ fontWeight: "bold", fontSize: "22px" }}
                 />
               )}
                 </div>
+                
+                <div>
+                  <LiaBookmarkSolid />
+                </div>
                  <div>
                   <AiOutlineShareAlt />
-                
                 </div>
                 <div></div>
                 <div></div>
               </div>
-              <ToastContainer/>
+
             </div>
           );
         }))}

@@ -1,17 +1,23 @@
 import { fakeFetch } from "../backend/utils/fakeFetchPosts"
-import React from "react"
-import {useState,useEffect,useContext} from "react"
+import React, { useContext } from "react"
+import {useState,useEffect} from "react"
+import {Link} from "react-router-dom"
 import "../styles.css"
 import {AiOutlineHeart } from "react-icons/ai";
-import {BiCommentDetail} from "react-icons/bi"
-import { LiaBookmarkSolid} from "react-icons/lia";
 import {AiOutlineShareAlt} from "react-icons/ai"
-import { likeContext } from "../contexts/likeContext";
+import {AiFillHeart} from "react-icons/ai"
+import { context } from "../contexts/contexts";
+import 'react-toastify/dist/ReactToastify.css'; // Import the CSS file
+import { ToastContainer } from 'react-toastify';
+import {BsFillBookmarkFill} from "react-icons/bs"
+import {BsBookmark} from "react-icons/bs"
+
 
 export default function ExplorePage(){
 
     let [isPosts,setIsPosts] = useState([])
-let {handleLikes,isClick,handleBM,isBK}= useContext(likeContext)
+    let {handleAddLinkes,isLikedPosts,handleAddBK,isBKPosts,handlesearuserinfo,handleRemoveBKpost,handleRemoveLikedpost} = useContext(context)
+
 
 
     let handleFetchedData= async () =>{
@@ -35,26 +41,62 @@ try{
         <div>
         <div className="fullPage-explore">
          {isPosts.map((postC) =>{
-            let {id,imgSrc,firstName,lastName,username,content,likes,comments} = postC
+            let {_id,imgSrc,firstName,lastName,username,content,likes,comments} = postC
+
+            let isLikelist= isLikedPosts.find(item => item.post_id===postC.post_id)
+            let isBKlist=isBKPosts.find(item => item.post_id===postC.post_id)
+
             return(
-                <div key={id} className="exploreUsers">
+                <div key={_id} className="exploreUsers">
                     <div className="fl-usernameGrid">
-                    <img src={imgSrc} alt="img1"/>
-                    <div>
+                      <Link to="/userinfo" onClick={() => handlesearuserinfo(postC)}>
+                      <img src={imgSrc} alt="img1"/>
+                      </Link>
+                    <div onClick={() => handlesearuserinfo(postC)}>
+                      <Link to="/userinfo">
                     <div className="exploreFL">{`${firstName} ${lastName}`}</div>
-                    <div className="exloreUsername">@{username}</div>   
+                    <div className="exloreUsername">@{username}</div> 
+                    </Link>  
                </div>
                  </div>
                  <div>
                     <div className="exploreContent">{content}</div>
                    </div>
                    <div className="optionsSocial">
-                    <div style={{color:isClick ? "red" : ""}} onClick={() => handleLikes(postC)}><AiOutlineHeart/><span>{likes.likeCount}</span></div>
-                    <div className="exploreComments"><BiCommentDetail/><span>{comments.length}</span></div>
-                    <div><LiaBookmarkSolid style={{color:isBK ? "red" : ""}} onClick={() => handleBM(postC)}/></div>
+                    <div >
+                        
+                        {isLikelist ? (
+              <AiFillHeart
+               style={{color:"red",fontWeight:"bold",fontSize:"22px"}}
+               onClick={() =>handleRemoveLikedpost(postC)}
+              />
+            ) : (
+              <AiOutlineHeart
+                onClick={() => handleAddLinkes(postC)}
+              style={{fontWeight:"bold",fontSize:"22px"}}
+                
+              />
+            )}
+                        <span>{likes.likeCount }</span></div>
+                  
+                    <div>
+                        
+                    </div>
                     <div><AiOutlineShareAlt/></div>
-                    <div></div>
-                    <div></div>
+                    <div>{isBKlist ? (
+              <BsFillBookmarkFill
+               style={{color:"red",fontWeight:"bold",fontSize:"22px"}}
+               onClick={() => handleRemoveBKpost(postC)}
+              />
+            ) : (
+              <BsBookmark
+                onClick={() => handleAddBK(postC)}
+              style={{fontWeight:"bold",fontSize:"22px"}}
+                
+              />
+            )}</div>
+                   
+                    
                    </div>
                   
                     </div>
@@ -64,6 +106,7 @@ try{
          })}
           
          </div>
+         <ToastContainer/>
         </div>
     )
 }

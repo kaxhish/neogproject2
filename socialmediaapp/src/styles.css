@@ -15,12 +15,7 @@ body{
     background-color: #fff7f7;
     color: #000000;
   }
-  
-  /* Dark Theme */
-  .fullPage-explore.dark {
-    background-color: #331414;
-    color: #ffffff;
-  }
+ 
   
 /*App.js ,, grid-section*/
 .fullpage{
@@ -135,16 +130,16 @@ font-weight: bold;
 }
 .optionsSocial{
     display: flex;
-   
+   justify-content: center;
+   align-items: center;
     padding: 10px;
 }
 .optionsSocial span{
-    margin-inline: 20px;
-  
+    margin: 10px;
 }
 .optionsSocial div{
     margin: 20px;
-    margin-inline: 15px;
+    margin-inline: 40px;
  font-size: 20px;
 }
 .exploreFL{
@@ -155,85 +150,95 @@ font-weight: bold;
 .exploreContent{
     margin-top: 15px;
 }
-.redH{
-    color: red;
+
+.addpostarea{
+    width: 45pc;
+    height: 20pc;
+   font-size: 22px;
+   text-align: center;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: #f0e6e6af;
+    padding: 25px;
+    border-radius: 10px;
+    margin-block: 50px;
 }
-.loginPage{
-    display: flex;
-    flex-direction: column;
-    width: 20pc;
-    height: 25pc;
+.postbtn{
+    text-align: center;
+    border-style: none;
+    background-color:  rgb(228, 158, 158);
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 10px;
+  position: relative;
+  bottom: 100px;
+    margin-left: 37pc;
+}
+.noPostsHeading {
+    text-align: center;
+    font-size: 40px;
+    color: #0f0f0f;
+    margin-top: 10pc;
+    font-weight: bolder;
+    width: 45pc;
+  }
+  .signupPage{
+    text-align: center;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 22pc;
+    height: 23pc;
+ margin: auto;
+ margin-block: 5pc;
+}
+.signupPage div{
+    margin: 20px;
+}
+.signupPage h1{
+    color:  rgba(49, 51, 200, 0.822);
+}.signupPage p{
+    font-weight: bold;
+}
+.signupPage input{
+    padding: 15px;
+    font-size: 16px;
+    margin-top: 10px;
+    height: 2pc;
+}
+.signupPage button{
+    background-color:  rgba(49, 51, 200, 0.822);
+    color: white;
+    font-weight: bold;
+    padding: 6px;
+border: none;
+}  .App {
+    text-align: center;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 22pc;
+    height: 23pc;
+ margin: auto;
+ margin-block: 5pc;
+  }
+  
+  .App header {
    
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 10pc;
-    border-radius: 15px;
-    border: none;
-background-color: white;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.login-form{
+    min-height: 20vh;
     display: flex;
     flex-direction: column;
-}
-.hash-log{
-    color: rgb(86, 86, 187);
-    font-weight: bold;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
-}
-.desp-log{
-    font-size: 17px;
-    margin-top: 10px;
-    font-weight: bold;
-}
-.loginPage h2{
-    color: rgb(228, 158, 158);
-}
-.loginPage input{
-    padding: 10px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-.loginPage button{
-    padding: 7px;
-    margin-block: 10px;
-    background-color: rgb(78, 78, 121);
-    color: white;
-    font-weight: bold;
-}
-.signpage{
+   
+  } .App header h1 {
+    margin-bottom: 20px;
+    color: rgba(49, 51, 200, 0.822);
+  }
+  
+  .form-group {
     display: flex;
     flex-direction: column;
-    width: 20pc;
-    height: 25pc;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 10pc;
-    border-radius: 15px;
-    border: none;
-background-color: white;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.signpage h2{
-    color: rgb(228, 158, 158);
-    font-weight: bolder;
-}
-.sign-form{
-    display: flex;
-    flex-direction: column;
-}
-.sign-form input{
-    padding: 7px;
-    margin-block: 10px;
-    width: 15pc;
-    font-weight: bolder;
-}
-.sign-form button{
-    padding: 7px;
-    margin-block: 10px;
-    background-color: rgb(78, 78, 121);
-    color: white;
-    font-weight: bold;
-}
+    margin-bottom: 10px;
+  }

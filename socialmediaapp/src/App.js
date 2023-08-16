@@ -1,23 +1,24 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./styles.css"
-import { likeContext } from "./contexts/likeContext";
 import AllPages from "./pages/allRender";
-import Login from "./pages/loginPage"
+import DisplayLoginPage from "./pages/login";
+import { useState } from "react";
+import SignUpPagee from "./pages/signup";
 import {Routes,Route} from "react-router-dom"
-import Signup from "./pages/signuPage"
-
 
 
 function App() {
 
-let {isLogClick,isTheme} = useContext(likeContext)
+let [isLogClck,setislogclick] = useState(false)
   return (
     <div>
-    <div>
-   {isLogClick ? <AllPages className={`fullPage-explore ${isTheme ? "dark" : ""}`}/> : <Login/>}
-   </div>
+      {
+        isLogClck ? <AllPages/> : <DisplayLoginPage issetclk={setislogclick} isclk={isLogClck}/>
+      }
    <Routes>
-<Route path="/sign" element={<Signup/>}/>
+    <Route path="/login" element={<DisplayLoginPage/>}/>
+    
+    <Route/>
    </Routes>
    </div>
     

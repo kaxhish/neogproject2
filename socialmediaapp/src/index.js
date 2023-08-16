@@ -5,7 +5,7 @@ import { BrowserRouter as Router} from 'react-router-dom';
 
 import App from './App';
 
-import LikeContextComp from './contexts/likeContext';
+import ContextComp from './contexts/contexts';
 
 const root = document.getElementById('root');
 const roote = createRoot(root);
@@ -16,10 +16,9 @@ const roote = createRoot(root);
 roote.render(
   <StrictMode>
     <Router>
-        <LikeContextComp>
+        <ContextComp>
           <App />
-          
-        </LikeContextComp>
+        </ContextComp>
     </Router>
   </StrictMode>
 );
